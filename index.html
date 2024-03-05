@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yet Another Project</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="utilities.js"></script>
+    
+</head>
+<body>
+ 
+    <div x-data="{
+        num : 0,
+        
+        name : ['elijah','austin','jordan','madison','julian','justin','tony','dakota','arial','lizzie'],
+        current : 'elijah',
+        increase() {
+            const randomIndex = Math.floor(Math.random() * this.name.length);
+            this.current = this.name[randomIndex];
+        },
+    }">
+        <h1 x-text="current"></h1>
+        <button @click="increase">Alpine</button>
+      
+    </div>
+    
+</body>
+</html>
